@@ -19,9 +19,23 @@
    </div>
 </body>
 <script>
-    document.getElementById('owl').addEventListener('click',()=>{
-        alert("Owl clicked!")
+    document.getElementById('owl').addEventListener('click',(ev)=>{
+        // alert("Owl clicked!")
+        console.log(ev)
     })
+    document.getElementById('google').addEventListener('click',(e)=>{
+            e.preventDefault();
+            e.stopPropagation();
+            console.log("Clicked in gopgle")
+    },false)
+    document.querySelector("#images").addEventListener('click',(p)=>{
 
+        if(p.target.tagName==='IMG'){
+            let removeit=p.target.parentNode;
+            removeit.remove();
+            
+        }
+        p.stopPropagation();
+    },)
 </script>
 </html>
